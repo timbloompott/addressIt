@@ -13,6 +13,8 @@ else:
 	# Get address from clipboard.
 	print('Error')
 
-webbrowser.open('https://www.google.com/maps/place/' + business + ' ' city + ' Illinois address')
-# webbrowser.open('https://www.google.com/maps/place/' + address)
+webbrowser.open('https://www.google.com/maps/place/' + business + ' ' + city + ' Illinois address')
+page = curl('https://www.google.com/maps/place/' + business + ' ' + city + ' Illinois address')
+print(page)
+#	browser.open('https://www.google.com/maps/place/' + address)
 # maps.googleapis.com/maps/api/place/textsearch/xml?query
