@@ -7,9 +7,12 @@
 import webbrowser, sys, pyperclip
 if len(sys.argv) > 1:
 	# Get address from command line.
-	address = ' '.join(sys.argv[1:])
+	business = ' ' .join(sys.argv[1])
+	city = ' '.join(sys.argv[2])
 else:
 	# Get address from clipboard.
-	address = pyperclip.paste()
+	print('Error')
 
-webbrowser.open('https://www.google.com/maps/place/' + address)
+webbrowser.open('https://www.google.com/maps/place' + business + ' in ' + city + ' address')
+# webbrowser.open('https://www.google.com/maps/place/' + address)
+# maps.googleapis.com/maps/api/place/textsearch/xml?query
