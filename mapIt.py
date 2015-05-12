@@ -7,8 +7,8 @@
 import webbrowser, sys, pyperclip
 if len(sys.argv) > 1:
 	# Get address from command line.
-	business = ' ' .join(sys.argv[1])
-	city = ' '.join(sys.argv[2])
+	business = sys.argv[1]
+	city = sys.argv[2]
 else:
 	# Get address from clipboard.
 	print('Error')
