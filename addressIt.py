@@ -9,7 +9,9 @@
 import openpyxl
 wb = openpyxl.load_workbook('./Lights out Tracking 2015.xlsx')
 type(wb)
+
 #read worksheet
+sheet = wb.get_sheet_by_name('Sheet1')
 
 #read business name
 
