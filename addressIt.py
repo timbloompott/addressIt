@@ -5,15 +5,23 @@
 #			 Returns that business' address
 #			 and writes it to the excel file. 
 
+# imports
+import openpyxl, webbrowser, sys, pyperclip
+
 #open workbook
-import openpyxl
+print('Opening workbook...')
 wb = openpyxl.load_workbook('./Lights out Tracking 2015.xlsx')
-type(wb)
 
 #read worksheet
 sheet = wb.get_sheet_by_name('Sheet1')
 
 #read business name
+businessName = {}
+
+for row in range(3, get_highest_row + 1):
+	# Get the business name from each row of the spreadsheet
+	business = sheet['C' + str(row)].value
+	city = sheet['E' + str(row)].value
 
 #look up place id
 
@@ -22,16 +30,6 @@ sheet = wb.get_sheet_by_name('Sheet1')
 # return address
 
 # write address to excel file
-
-
-import webbrowser, sys, pyperclip
-if len(sys.argv) > 1:
-	# Get business and city from command line. 
-	business = sys.argv[1]
-	city = sys.argv[2]
-else:
-	# Get address from clipboard.
-	print('Error')
 
 webbrowser.open('https://www.google.com/maps/place/' + business + ' ' + city + ' Illinois address')
 # page = curl('https://www.google.com/maps/place/' + business + ' ' + city + ' Illinois address')
