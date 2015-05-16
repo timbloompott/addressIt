@@ -6,7 +6,7 @@
 #			 and writes it to the excel file. 
 
 # imports
-import openpyxl, webbrowser, sys, pyperclip
+import openpyxl, webbrowser, sys, pyperclip, keys
 
 #open workbook
 print('Opening workbook...')
@@ -28,6 +28,7 @@ for row in range(3, get_highest_row + 1):
 #use place id to find address
 
 # return address
+webbrowser.open('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key=' + API_KEY)
 
 # write address to excel file
 
