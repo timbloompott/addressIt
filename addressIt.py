@@ -6,7 +6,8 @@
 #			 and writes it to the excel file. 
 
 # imports
-import openpyxl, webbrowser, sys, pyperclip, keys
+import openpyxl, webbrowser, sys, pyperclip
+from keys import *
 
 #open workbook
 print('Opening workbook...')
@@ -18,17 +19,17 @@ sheet = wb.get_sheet_by_name('Sheet1')
 #read business name
 businessName = {}
 
-for row in range(3, get_highest_row + 1):
+# for row in range(3, get_highest_row + 1):
 	# Get the business name from each row of the spreadsheet
-	business = sheet['C' + str(row)].value
-	city = sheet['E' + str(row)].value
+	#business = sheet['C' + str(row)].value
+	#city = sheet['E' + str(row)].value
 
 #look up place id
 
 #use place id to find address
 
 # return address
-webbrowser.open('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key=' + API_KEY)
+webbrowser.open('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key='+ API_KEY)
 
 # write address to excel file
 
