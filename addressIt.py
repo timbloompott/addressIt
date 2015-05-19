@@ -18,6 +18,9 @@ sheet = wb.get_sheet_by_name('Sheet1')
 
 #read business name
 businessName = {}
+if len(sys.argv) > 1:
+	#get busiess name from command line
+	business = ' '.join(sys.argv[1:])
 
 # for row in range(3, get_highest_row + 1):
 	# Get the business name from each row of the spreadsheet
@@ -29,12 +32,10 @@ businessName = {}
 #use place id to find address
 
 # return address
-webbrowser.open('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key='+ API_KEY)
+webbrowser.open('https://maps.googleapis.com/maps/api/place/textsearch/json?query='+business+'near peoria illinois&key='+ API_KEY)
 
 # write address to excel file
 
-webbrowser.open('https://www.google.com/maps/place/' + business + ' ' + city + ' Illinois address')
-# page = curl('https://www.google.com/maps/place/' + business + ' ' + city + ' Illinois address')
-# print(page)
+#webbrowser.open('https://www.google.com/maps/place/' + business + ' ' + city + ' Illinois address')
 #	browser.open('https://www.google.com/maps/place/' + address)
 # maps.googleapis.com/maps/api/place/textsearch/xml?query
