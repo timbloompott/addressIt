@@ -20,7 +20,8 @@ sheet = wb.get_sheet_by_name('Sheet1')
 businessName = {}
 if len(sys.argv) > 1:
 	#get busiess name from command line
-	business = ' '.join(sys.argv[1:])
+	business = (sys.argv[1])
+	city = (sys.argv[2])
 
 # for row in range(3, get_highest_row + 1):
 	# Get the business name from each row of the spreadsheet
@@ -32,7 +33,7 @@ if len(sys.argv) > 1:
 #use place id to find address
 
 # return address
-webbrowser.open('https://maps.googleapis.com/maps/api/place/textsearch/json?query='+business+'near peoria illinois&key='+ API_KEY)
+webbrowser.open('https://maps.googleapis.com/maps/api/place/textsearch/json?query='+business+' near ' + city + ' illinois&key='+ API_KEY)
 
 # write address to excel file
 
