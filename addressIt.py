@@ -6,7 +6,7 @@
 #			 and writes it to the excel file. 
 
 # imports
-import openpyxl, webbrowser, sys, pyperclip
+import openpyxl, webbrowser, sys, pyperclip, placeSearch
 from keys import *
 
 #open workbook
@@ -29,11 +29,11 @@ if len(sys.argv) > 1:
 	#city = sheet['E' + str(row)].value
 
 #look up place id
+placeSearch.placeFind('menards', 'peoria', 'illinois')
 
 #use place id to find address
 
 # return address
-webbrowser.open('https://maps.googleapis.com/maps/api/place/textsearch/json?query='+business+' near ' + city + ' illinois&key='+ API_KEY)
 
 # write address to excel file
 
