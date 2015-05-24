@@ -6,6 +6,7 @@
 #				   places search
 
 import json, requests, sys, pprint
+from keys import *
 
 def placeFind(business, city, state):
 	 
@@ -13,7 +14,7 @@ def placeFind(business, city, state):
 	
 	params = dict(
 		query = business + ' in ' + city + ' , ' + state,
-		key = 'AIzaSyBsWslE0hWtwUrnSGwzKYFXczjmtyuwEwc'
+		key = API_KEY
 	)	
 
 	data = requests.get(url=url, params=params).json()
